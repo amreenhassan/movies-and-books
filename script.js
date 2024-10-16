@@ -25,6 +25,6 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     document.getElementById('suggestionTitle').innerText = `Hey ${name}, we suggest you ${choice === 'book' ? 'read' : 'watch'}:`;
     document.getElementById('suggestionText').innerText = suggestion;
 
-    document.querySelector('.container').classList.add('hidden');
+    document.querySelector('.background').classList.add('hidden');
     document.getElementById('suggestion').classList.remove('hidden');
 });
