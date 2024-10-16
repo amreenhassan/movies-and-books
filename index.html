@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Astrology Suggestion</h1>
+        <h1>Astrology Suggestion Portal</h1>
         <form id="userForm">
             <label for="name">What's your name?</label>
-            <input type="text" id="name" required>
+            <input type="text" id="name" required placeholder="Enter your name">
 
             <label for="sign">Choose your astrological sign:</label>
             <select id="sign" required>
@@ -30,7 +30,7 @@
                 <option value="pisces">Pisces</option>
             </select>
 
-            <div>
+            <div class="preference">
                 <label>Do you prefer:</label>
                 <label><input type="radio" name="choice" value="book" required> Books</label>
                 <label><input type="radio" name="choice" value="movies"> Movies</label>
@@ -43,10 +43,9 @@
     <div id="suggestion" class="hidden">
         <h2 id="suggestionTitle"></h2>
         <p id="suggestionText"></p>
-        <p>Created by Amreen</p>
+        <p class="creator">Created by Amreen</p>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
