@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aesthetic Astrology Suggestions</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Astrology Suggestion</h1>
+        <form id="userForm">
+            <label for="name">What's your name?</label>
+            <input type="text" id="name" required>
+
+            <label for="sign">Choose your astrological sign:</label>
+            <select id="sign" required>
+                <option value="">Select your sign</option>
+                <option value="aries">Aries</option>
+                <option value="taurus">Taurus</option>
+                <option value="gemini">Gemini</option>
+                <option value="cancer">Cancer</option>
+                <option value="leo">Leo</option>
+                <option value="virgo">Virgo</option>
+                <option value="libra">Libra</option>
+                <option value="scorpio">Scorpio</option>
+                <option value="sagittarius">Sagittarius</option>
+                <option value="capricorn">Capricorn</option>
+                <option value="aquarius">Aquarius</option>
+                <option value="pisces">Pisces</option>
+            </select>
+
+            <div>
+                <label>Do you prefer:</label>
+                <label><input type="radio" name="choice" value="book" required> Books</label>
+                <label><input type="radio" name="choice" value="movies"> Movies</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="suggestion" class="hidden">
+        <h2 id="suggestionTitle"></h2>
+        <p id="suggestionText"></p>
+        <p>Created by Amreen</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
