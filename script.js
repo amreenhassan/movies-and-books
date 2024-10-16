@@ -1,50 +1,30 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #f5e6ff, #e1e1e1, #c1c1ff);
-    color: #333;
-}
+const zodiacSuggestions = {
+    aries: { book: "The Alchemist", movie: "The Hunger Games" },
+    taurus: { book: "Pride and Prejudice", movie: "The Notebook" },
+    gemini: { book: "The Catcher in the Rye", movie: "Inception" },
+    cancer: { book: "Little Women", movie: "Finding Nemo" },
+    leo: { book: "Harry Potter", movie: "The Lion King" },
+    virgo: { book: "The Great Gatsby", movie: "A Beautiful Mind" },
+    libra: { book: "The Fault in Our Stars", movie: "La La Land" },
+    scorpio: { book: "Gone Girl", movie: "The Dark Knight" },
+    sagittarius: { book: "Wild", movie: "Into the Wild" },
+    capricorn: { book: "Educated", movie: "The Pursuit of Happyness" },
+    aquarius: { book: "The Art of War", movie: "The Matrix" },
+    pisces: { book: "The Ocean at the End of the Lane", movie: "Eternal Sunshine of the Spotless Mind" },
+};
 
-.container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+document.getElementById('userForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const sign = document.getElementById('sign').value;
+    const choice = document.querySelector('input[name="choice"]:checked').value;
 
-.hidden {
-    display: none;
-}
+    const suggestion = zodiacSuggestions[sign][choice];
+    
+    document.getElementById('suggestionTitle').innerText = `Hey ${name}, we suggest you ${choice === 'book' ? 'read' : 'watch'}:`;
+    document.getElementById('suggestionText').innerText = suggestion;
 
-label {
-    display: block;
-    margin: 10px 0;
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #6b5b95;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #5a4a85;
-}
-
+    document.querySelector('.container').classList.add('hidden');
+    document.getElementById('suggestion').classList.remove('hidden');
+});
