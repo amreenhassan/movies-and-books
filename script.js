@@ -22,9 +22,17 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 
     const suggestion = zodiacSuggestions[sign][choice];
     
-    document.getElementById('suggestionTitle').innerText = `Hey ${name}, we suggest you ${choice === 'book' ? 'read' : 'watch'}:`;
-    document.getElementById('suggestionText').innerText = suggestion;
+    localStorage.setItem('suggestion', `${name}, we suggest you ${choice === 'book' ? 'read' : 'watch'}: ${suggestion}`);
+    window.location.href = 'suggestions.html';
+});
 
-    document.querySelector('.background').classList.add('hidden');
-    document.getElementById('suggestion').classList.remove('hidden');
+function goBack() {
+    window.history.back();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const suggestionText = localStorage.getItem('suggestion');
+    if (suggestionText) {
+        document.getElementById('suggestionText').innerText = suggestionText;
+    }
 });
